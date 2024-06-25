@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <button class="navbar-brand" (click)="navigateTo('')">
+        <span class="button_top"> {{title}} </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="nav-link active navbar-brand" aria-current="page" (click)="navigateTo('verTodos')">
+              <span class="button_top">Ver todos</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link active navbar-brand" (click)="navigateTo('verTipos')">
+              <span class="button_top">Ver tipos</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-primary" type="button" (click)="toggleSection()">
+        {{ showSection ? 'Ocultar Favoritos' : 'Mostrar Favoritos' }}
+      </button>
+    </div>
+  </nav>
+
+  <div class="overlay" [ngClass]="{'show': showSection}" (click)="closeSection($event)">
+    <div class="overlay-content" (click)="$event.stopPropagation()">
+      <app-fav-list></app-fav-list>
+    </div>
+  </div>

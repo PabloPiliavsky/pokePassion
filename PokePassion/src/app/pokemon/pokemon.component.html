@@ -1,0 +1,18 @@
+<div class="card-container">
+    <div class="card" [ngStyle]="{ 'background-color': typeColor }">
+        <img [src]="img" class="card-img-top" [alt]="name">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">pokemon numero {{id}}</li>
+            <li *ngFor="let type of types" class="list-group-item">tipo: {{type.type.name}}</li>
+        </ul>
+        <div  class="card-botton">
+            <ng-content> 
+            </ng-content>
+        </div>
+    </div>
+</div>
+
+    

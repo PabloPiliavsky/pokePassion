@@ -1,0 +1,16 @@
+<div class="card-container">
+    @for(data of typeData | paginate: {id:"pokemon-type", itemsPerPage: typesPerPage, currentPage: currentPage }; track data.id){ <!--el id hace que no se use el mismo en todas las paginaciones-->
+    <div class="card" [ngStyle]="{ 'background-color': data.color }">
+        <img [src]="data.img" class="card-img-top" [alt]="data.type">
+        <div class="card-body">
+            <h5 class="card-title">{{data.type}}</h5>
+        </div>
+        <div class="buttons">
+            <button class="btn" (click)="navigateTo('verTipo/'+ data.id)"><span></span><p data-start="good luck!" data-text="show type!" data-title="choose me!"></p></button>
+        </div>
+    </div>
+    }
+</div>
+<div style="display: flex; justify-content: center;">
+    <pagination-controls id="pokemon-type" (pageChange)="currentPage = $event"></pagination-controls>
+</div>

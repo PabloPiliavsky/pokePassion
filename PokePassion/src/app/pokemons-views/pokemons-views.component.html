@@ -1,0 +1,13 @@
+<div class="container">
+  @for(pokemon of pokemons| paginate: { id:"pokemons-views", itemsPerPage: pokemonsPerPage, currentPage: currentPage }; track pokemon.name ){ <!--el id hace que no se use el mismo en todas las paginaciones-->
+    <div> <!-- hago una tarjeta por cada pokemon a mostrar-->
+      <app-pokemon class="pokemon" [name]="pokemon.name" [url]="pokemon.url">
+        <app-add-button [pokemon]="pokemon"></app-add-button>
+      </app-pokemon><!-- los corchetes indican los datos que le paso de cada pokemon, son los mismos del pokemon component ts-->
+    </div>
+  }
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <pagination-controls id="pokemons-views" (pageChange)="currentPage = $event"></pagination-controls>
+</div>
