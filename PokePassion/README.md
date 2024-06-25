@@ -9,3 +9,5 @@ Este proyecto fue desarrollado por Pablo Ruben Piliavsky, cuyos datos son:
 ## email: pablopiliavsky21@gmail.com
     
 ## Sede: Quequen
+
+## link: https://stackblitz.com/~/github.com/PabloPiliavsky/pokePassion
